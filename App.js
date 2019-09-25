@@ -22,9 +22,11 @@ const App = () => (
           component={HomeScreen}
           title="Home"
           leftTitle="Other"
-          onLeft={Actions.other}
+          onLeft={() => {
+            Actions.other();
+          }}
         />
-        <Scene key="other" component={OtherScreen} />
+        <Scene key="other" component={OtherScreen} title="Other" />
       </Scene>
     </Router>
   </Provider>
