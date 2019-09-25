@@ -12,6 +12,8 @@ import {Router, Scene, Actions} from 'react-native-router-flux';
 import HomeScreen from './src/HomeScreen';
 import {Provider} from 'unstated';
 import OtherScreen from './src/OtherScreen';
+import ListScreen from './src/ListScreen';
+import AddScreen from './src/AddScreen';
 
 const App = () => (
   <Provider>
@@ -27,6 +29,17 @@ const App = () => (
           }}
         />
         <Scene key="other" component={OtherScreen} title="Other" />
+        <Scene
+          key="list"
+          initial
+          component={ListScreen}
+          title="List"
+          rightTitle="ADD"
+          onRight={() => {
+            Actions.add();
+          }}
+        />
+        <Scene key="add" component={AddScreen} title="Add" />
       </Scene>
     </Router>
   </Provider>
